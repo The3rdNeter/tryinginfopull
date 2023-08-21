@@ -1,0 +1,10 @@
+def validate_ssn(ssn):
+    # Check if SSN is in the correct format
+    if len(ssn) != 9 or not ssn.isdigit():
+        return False
+
+    # Check if SSN exists in the database
+    if not check_ssn_in_database(ssn):
+        return False
+
+    return True

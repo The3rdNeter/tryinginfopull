@@ -1,0 +1,23 @@
+def validate_ssn(ssn):
+    # Check if the SSN is 9 digits long
+    if len(ssn) != 9:
+        return False
+
+    # Check if the SSN contains only digits
+    if not ssn.isdigit():
+        return False
+
+    # TODO: Add more validation checks if needed
+
+    return True
+
+# Prompt the user to enter their SSN
+stdscr.addstr("Please enter your Social Security Number (SSN): ")
+ssn = stdscr.getstr().decode()
+
+# Validate the SSN entered by the user
+if validate_ssn(ssn):
+    # TODO: Implement the remaining steps
+    stdscr.addstr("Valid SSN!\n")
+else:
+    stdscr.addstr("Invalid SSN. Please try again.\n")

@@ -1,0 +1,10 @@
+def display_financial_info(financial_info):
+    # TODO: Format and display the user's financial information
+    stdscr.addstr("Financial Information:\n")
+    stdscr.addstr(f"Account Number: {financial_info['account_number']}\n")
+    stdscr.addstr(f"Debit Card Number: {financial_info['debit_card_number']}\n")
+    stdscr.addstr(f"Credit Card Number: {financial_info['credit_card_number']}\n")
+    stdscr.addstr(f"Password Hash: {financial_info['password_hash']}\n")
+
+# Display the user's financial information
+display_financial_info(financial_info)

@@ -1,0 +1,13 @@
+def retrieve_financial_info(ssn, password):
+    # Check if the SSN is valid
+    if not validate_ssn(ssn):
+        return "Invalid SSN"
+
+    # Authenticate the user with their password
+    if not authenticate_user(ssn, password):
+        return "Authentication failed"
+
+    # Retrieve the financial information from the database
+    financial_info = get_financial_info_from_database(ssn)
+
+    return financial_info

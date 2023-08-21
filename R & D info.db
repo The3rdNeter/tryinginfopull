@@ -1,0 +1,43 @@
+import getpass
+
+def retrieve_financial_info(ssn):
+    # Step 1: Validate the SSN
+    if not validate_ssn(ssn):
+        print("Invalid SSN")
+        return
+
+    # Step 2: Authenticate the user
+    if not authenticate_user():
+        print("Authentication failed")
+        return
+
+    # Step 3: Search the database
+    financial_info = search_database(ssn)
+
+    # Step 4: Retrieve and display the information
+    display_financial_info(financial_info)
+
+def validate_ssn(ssn):
+    # Perform SSN validation logic here
+    # Return True if valid, False otherwise
+    pass
+
+def authenticate_user():
+    # Perform user authentication logic here
+    # Return True if authenticated, False otherwise
+    pass
+
+def search_database(ssn):
+    # Perform database search logic here
+    # Return the financial information for the given SSN
+    pass
+
+def display_financial_info(financial_info):
+    # Perform formatting and display logic here
+    pass
+
+# Prompt the user for their SSN
+ssn = input("Enter your SSN: ")
+
+# Call the function to retrieve the financial information
+retrieve_financial_info(ssn)

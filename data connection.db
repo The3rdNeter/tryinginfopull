@@ -1,0 +1,15 @@
+import psycopg2
+
+def connect_to_database():
+    try:
+        # Connect to the first database
+        conn1 = psycopg2.connect(database="database1", user="user1", password="password1", host="host1", port="port1")
+        
+        # Connect to the second database
+        conn2 = psycopg2.connect(database="database2", user="user2", password="password2", host="host2", port="port2")
+        
+        # Return the database connections
+        return conn1, conn2
+    except Exception as e:
+        print("Error connecting to the databases:", e)
+        return None, None

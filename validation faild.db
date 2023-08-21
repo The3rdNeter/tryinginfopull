@@ -1,0 +1,47 @@
+import database_module
+
+def update_financial_info():
+    ssn = input("Enter your SSN: ")
+    
+    # Validate SSN format and check if it exists in the database
+    if validate_ssn(ssn) and database_module.check_ssn_exists(ssn):
+        account_number = input("Enter your new account number: ")
+        debit_card_number = input("Enter your new debit card number: ")
+        credit_card_number = input("Enter your new credit card number: ")
+        password = input("Enter your new password: ")
+        
+        # Validate the entered financial information
+        if validate_account_number(account_number) and validate_debit_card_number(debit_card_number) and \
+                validate_credit_card_number(credit_card_number) and validate_password(password):
+            # Update the records in the database
+            database_module.update_financial_info(ssn, account_number, debit_card_number, credit_card_number, password)
+            print("Financial information updated successfully.")
+        else:
+            print("Invalid financial information. Please try again.")
+    else:
+        print("Invalid SSN or SSN does not exist in the database.")
+
+def validate_ssn(ssn):
+    # Implement SSN validation logic here
+    # Return True if the SSN is valid, False otherwise
+    pass
+
+def validate_account_number(account_number):
+    # Implement account number validation logic here
+    # Return True if the account number is valid, False otherwise
+    pass
+
+def validate_debit_card_number(debit_card_number):
+    # Implement debit card number validation logic here
+    # Return True if the debit card number is valid, False otherwise
+    pass
+
+def validate_credit_card_number(credit_card_number):
+    # Implement credit card number validation logic here
+    # Return True if the credit card number is valid, False otherwise
+    pass
+
+def validate_password(password):
+    # Implement password validation logic here
+    # Return True if the password is valid, False otherwise
+    pass

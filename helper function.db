@@ -1,0 +1,20 @@
+def check_ssn_in_database(ssn):
+    # Check if the SSN exists in the database
+    # Implementation details depend on the specific database system being used
+    # Use appropriate database APIs or query language to perform the check
+    # Return True if SSN exists, False otherwise
+    pass
+
+def authenticate_user(ssn, password):
+    # Authenticate the user with their SSN and password
+    # Implementation details depend on the specific authentication system being used
+    # Use appropriate authentication APIs or mechanisms to validate the user
+    # Return True if authentication is successful, False otherwise
+    pass
+
+def get_financial_info_from_database(ssn):
+    # Retrieve the financial information from the database based on the SSN
+    # Implementation details depend on the specific database system being used
+    # Use appropriate database APIs or query language to fetch the information
+    # Return the financial information as a dictionary or object
+    pass

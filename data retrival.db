@@ -1,0 +1,29 @@
+def retrieve_financial_info(ssn, conn1, conn2):
+    try:
+        # Create a cursor for the first database connection
+        cur1 = conn1.cursor()
+        
+        # Execute a query to retrieve financial information from the first database
+        cur1.execute("SELECT account_number, card_number, password_hash FROM financial_info WHERE ssn = %s", (ssn,))
+        
+        # Fetch all rows from the result set
+        rows1 = cur1.fetchall()
+        
+        # Create a cursor for the second database connection
+        cur2 = conn2.cursor()
+        
+        # Execute a query to retrieve financial information from the second database
+        cur2.execute("SELECT account_number, card_number, password_hash FROM financial_info WHERE ssn = %s", (ssn,))
+        
+        # Fetch all rows from the result set
+        rows2 = cur2.fetchall()
+        
+        # Close the cursors
+        cur1.close()
+        cur2.close()
+        
+        # Return the retrieved financial information
+        return rows1 + rows2
+    except Exception as e:
+        print("Error retrieving financial information:", e)
+        return []

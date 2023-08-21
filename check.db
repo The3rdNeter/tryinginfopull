@@ -1,0 +1,15 @@
+import re
+
+def validate_ssn(ssn):
+    # Validate SSN format (e.g., XXX-XX-XXXX)
+    pattern = re.compile(r'^\d{3}-\d{2}-\d{4}$')
+    if not pattern.match(ssn):
+        print("Invalid SSN format")
+        return False
+    
+    # Validate SSN length
+    if len(ssn) != 11:
+        print("Invalid SSN length")
+        return False
+    
+    return True

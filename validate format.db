@@ -1,0 +1,8 @@
+def get_financial_info(ssn):
+    # TODO: Retrieve the user's financial information from the database using the SSN
+    return financial_info
+
+# Retrieve the user's financial information
+financial_info = get_financial_info(ssn)
+
+# TODO: Implement the remaining steps

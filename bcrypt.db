@@ -1,0 +1,19 @@
+import bcrypt
+
+def validate_ssn(ssn, hashed_ssn):
+    # Validate the SSN by comparing it with the hashed SSN stored in the database
+    return bcrypt.checkpw(ssn.encode(), hashed_ssn.encode())
+
+# Prompt the user to enter their SSN
+stdscr.addstr("Please enter your Social Security Number (SSN): ")
+ssn = stdscr.getstr().decode()
+
+# Retrieve the hashed SSN from the database
+hashed_ssn = get_hashed_ssn_from_database()
+
+# Validate the SSN entered by the user
+if validate_ssn(ssn, hashed_ssn):
+    # TODO: Implement the remaining steps
+    stdscr.addstr("Login successful!\n")
+else:
+    stdscr.addstr("Invalid SSN. Please try again.\n")

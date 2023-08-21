@@ -1,0 +1,30 @@
+import hashlib
+
+def retrieve_financial_info(ssn):
+    # Hash the SSN to ensure privacy and confidentiality
+    hashed_ssn = hashlib.sha256(ssn.encode()).hexdigest()
+
+    # Retrieve financial information based on the hashed SSN
+    # This could involve querying a database or calling an API
+    financial_info = query_database(hashed_ssn)
+
+    # Decrypt and display the retrieved financial information
+    decrypted_info = decrypt(financial_info)
+    display_info(decrypted_info)
+
+def query_database(hashed_ssn):
+    # Query the database using the hashed SSN
+    # This could involve executing a SQL query or calling an API
+    # Return the encrypted financial information
+    return encrypted_info
+
+def decrypt(encrypted_info):
+    # Decrypt the encrypted financial information
+    # This could involve using a symmetric encryption algorithm
+    # Return the decrypted information
+    return decrypted_info
+
+def display_info(info):
+    # Display the retrieved financial information
+    # This could involve printing the information to the terminal
+    print(info)

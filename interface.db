@@ -1,0 +1,35 @@
+def main():
+    # Connect to the databases
+    conn1, conn2 = connect_to_database()
+    
+    if conn1 is None or conn2 is None:
+        return
+    
+    # Prompt the user to enter an SSN
+    ssn = input("Enter SSN: ")
+    
+    # Validate the SSN
+    if not validate_ssn(ssn):
+        return
+    
+    # Retrieve the financial information
+    financial_info = retrieve_financial_info(ssn, conn1, conn2)
+    
+    if len(financial_info) == 0:
+        print("No financial information found for the specified SSN")
+    else:
+        # Display the financial information
+        print("Financial Information:")
+        for row in financial_info:
+            account_number, card_number, password_hash = row
+            print("Account Number:", account_number)
+            print("Card Number:", card_number)
+            print("Password Hash:", password_hash)
+            print()
+    
+    # Close the database connections
+    conn1.close()
+    conn2.close()
+
+if __name__ == "__main__":
+    main()
